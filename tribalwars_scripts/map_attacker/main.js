@@ -13,11 +13,11 @@ function waitForVueToStart() {
 waitForVueToStart();
 
 var app;
-function main() {
+function main() {x
     app = new Vue({
         el: "#vueapp",
         data: {
-            Darxeal: Darxeal,
+            trestribes3: trestribes3,
             units: game_data.units,
             buildings: Object.keys(game_data.village.buildings),
             unitData: null,
@@ -55,7 +55,7 @@ function main() {
             $("#map_topo>form").hide();
             $("#map_topo>table").hide();
 
-            let response = await Darxeal.unitsInfo();
+            let response = await trestribes3.unitsInfo();
             this.unitData = response.unit_data;
             delete this.unitData.militia;
             this.units = Object.keys(this.unitData);
@@ -73,7 +73,7 @@ function main() {
                 }
             }, 1000);
 
-            Darxeal.interceptErrorMessage();
+            trestribes3.interceptErrorMessage();
 
             this.templates = await $.get(host + "map_attacker/templates.json");
         },
@@ -165,7 +165,7 @@ function main() {
                 clearTimeout(command.timeout);
             },
             sendCommand: async function(command) {
-                let unitsHome = await Darxeal.unitsHome(command.source.id);
+                let unitsHome = await trestribes3.unitsHome(command.source.id);
 
                 for (var unit of this.units) {
                     let requiredForTrain = 0;
@@ -192,7 +192,7 @@ function main() {
                     command.unitSendAlls[unit] = false;
                 }
 
-                let response = await Darxeal.sendCommand(command.target.x, command.target.y, command.source.id,
+                let response = await trestribes3.sendCommand(command.target.x, command.target.y, command.source.id,
                     command.unitCounts, command.commandType, command.catapultTarget, command.train);
                 if (response && response.message) {
                     command.status = response.message;
