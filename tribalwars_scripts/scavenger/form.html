@@ -1,0 +1,63 @@
+<div id="vueapp">
+    <div class="vis" style="width: fit-content;">
+        <h4>AutoScavenger by Darxeal</h4>
+        <table>
+            <tr>
+                <td>
+                    <table>
+                        <tr>
+                            <th v-for="unit in units">
+                                <img :src="image_src('unit/unit_' + unit + '.png')" :alt="unit">
+                            </th>
+                        </tr>
+                        <tr>
+                            <td v-for="unit in units">
+                                <input type="checkbox" v-model="allowedUnits" :value="unit">
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" value="time" v-model="picked" :disabled="active">
+                    rozdělit vojsko aby bylo na sběru přesně
+                    <input type="number" v-model.number="interval" :disabled="active || picked == 'gain'" style="width: 50px;">
+                    minut
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="radio" value="gain" v-model="picked" :disabled="active">
+                    rozdělit vojsko pro maximální zisk
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button @click="start" class="btn" :disabled="active">Spustit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <table class="vis">
+        <tr>
+            <th>Poslané vojsko</th>
+            <th>Kategorie</th>
+            <th>Čas</th>
+        </tr>
+        <tr v-for="squad in sentSquads">
+            <td>
+                <span v-for="unit in units" v-if="squad.candidate_squad.unit_counts[unit] > 0">
+                    {{ squad.candidate_squad.unit_counts[unit] }}
+                    <img :src="image_src('unit/unit_' + unit + '.png')" alt="unit">
+                </span>
+            </td>
+            <td>
+                {{ squad.option_id }}
+            </td>            
+            <td>
+                {{ squad.time }}
+            </td>            
+        </tr>
+    </table>
+</div>

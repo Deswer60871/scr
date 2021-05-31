@@ -1,0 +1,11 @@
+<div id="vueapp">
+    <div v-for="(log, i) in logs" class="vis">
+        <h4>{{ log.player_name }} - {{ log.world }} - {{ log.time }}</h4>
+        <div v-if="log.loaded" v-html="log.loaded"></div>
+        <div v-else>
+            <button class="btn" @click="loadLog(log.html, i)">
+                Načíst
+            </button>
+        </div>
+    </div>
+</div>

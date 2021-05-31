@@ -1,0 +1,84 @@
+<h4>Darxeal's Auto Premium Trader (last update 9.11.2019)</h4>
+<div id="vueapp" style="display: flex;">
+    <div style="flex: 30%;">
+        <table class="resource-settings" style="width: 100%;">
+            <tr>
+                <th colspan="2"></th>
+                <th>Minimum</th>
+                <th>Total limit</th>
+            </tr>
+            <tr v-for="resource in resources">
+                <td>
+                    <img :src="resource_image(resource)" :alt="resource">
+                </td>
+                <td>
+                    <input type="checkbox" v-model="activeResources[resource]" :disabled="active">
+                </td>
+                <td>
+                    <input type="number" v-model.number="resourceMinimums[resource]" :disabled="!activeResources[resource] || active" style="width: 70px;">
+                </td>
+                <td>
+                    <input type="number" v-model.number="resourceLimits[resource]" :disabled="!activeResources[resource] || active" style="width: 70px;">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="42">    
+                    <button @click="activate" :disabled="active" class="btn" style="margin: 10px;">Activate</button>
+                    <span v-if="active" class="reached"> Active</span>
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div style="flex: 50%;">
+        <table class="completed-exchanges" style="width: 100%;">
+            <tr>
+                <th colspan="42">Completed Exchanges</th>
+            </tr>
+            <tr v-for="exchange in completedExchanges">
+                <td>
+                    <img :src="resource_image(exchange.resource)" :alt="exchange.resource">
+                    {{ exchange.amount }}
+                </td>
+                <td>
+                    <img :src="image_src('resources/premium.png')" alt="Premium Points">
+                    {{ exchange.cost }}
+                </td>
+                <td>{{ exchange.time }}</td>
+            </tr>
+            <tr v-if="completedExchanges.length == 0">
+                <td colspan="42"><i>No exchanges completed yet</i></td>
+            </tr>
+            <tr v-if="active && allLimitsReached">
+                <td class="reached" colspan="42">
+                    All limits reached
+                </td>
+            </tr>
+        </table>
+        <table style="width: 100%;">
+            <tr>
+                <th colspan="42">
+                    Total exchanged
+                </th>
+            </tr>
+            <tr>
+                <td v-for="resource in resources" style="width: 20%;">
+                    <img :src="resource_image(resource)" :alt="resource">
+                    <span v-if="activeResources[resource]" :class="{ reached : totalExchangedResources(resource) >= resourceLimits[resource] }">
+                        {{ totalExchangedResources(resource) }}/{{ resourceLimits[resource] }}
+                    </span>
+                    <span v-else>-</span>
+                </td>
+                <td style="width: 20%;">
+                    <img :src="image_src('resources/premium.png')" alt="Premium Points">
+                    {{ spentPremiumPoints }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<style>
+    .reached {
+        color: green;
+        font-weight: bold;
+    }
+</style>

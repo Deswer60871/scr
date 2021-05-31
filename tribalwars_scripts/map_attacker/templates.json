@@ -1,0 +1,35 @@
+[
+    {
+        "name": "Fullka",
+        "icon": "unit/unit_ram.png",
+        "count": {},
+        "all": [
+            "axe", "light", "marcher", "ram", "catapult", "knight"
+        ],
+        "train": []
+    },
+    {
+        "name": "Vláček",
+        "icon": "unit/unit_snob.png",
+        "count": {
+            "snob": 1
+        },
+        "all": [
+            "axe", "light", "ram", "catapult", "knight"
+        ],
+        "train": [
+            {"axe": 100, "light": 50, "snob": 1},
+            {"axe": 100, "light": 50, "snob": 1},
+            {"axe": 100, "light": 50, "snob": 1}
+        ]
+    },
+    {
+        "name": "Obrana",
+        "icon": "unit/unit_sword.png",
+        "count": {},
+        "all": [
+            "spear", "sword", "archer", "heavy", "knight"
+        ],
+        "train": []
+    }
+]

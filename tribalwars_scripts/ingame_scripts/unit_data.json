@@ -1,0 +1,578 @@
+{
+    "response": {
+        "unit_data": {
+            "spear": {
+                "id": "spear",
+                "image": "unit\/unit_spear.png",
+                "type": "infantry",
+                "prod_building": "barracks",
+                "build_time": 2.55,
+                "wood": 50,
+                "stone": 30,
+                "iron": 10,
+                "pop": 1,
+                "speed": 0.3703703704,
+                "attack": 10,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 15,
+                "defense_cavalry": 45,
+                "defense_archer": 20,
+                "carry": 25,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 4,
+                "defpoints": 1,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "barracks",
+                        "building_link": "\/game.php?village=617&amp;screen=barracks",
+                        "name": "Kas\u00e1rna",
+                        "level": 1
+                    }
+                ],
+                "name": "Kopin\u00edk ",
+                "shortname": "Kop\u00ed",
+                "desc": "Kopin\u00edci je jednoduch\u00e1 jednotka. Jsou mimo\u0159\u00e1dn\u011b efektivn\u00ed p\u0159i obran\u011b proti jezdc\u016fm.",
+                "desc_abilities": []
+            },
+            "sword": {
+                "id": "sword",
+                "image": "unit\/unit_sword.png",
+                "type": "infantry",
+                "prod_building": "barracks",
+                "build_time": 3.75,
+                "wood": 30,
+                "stone": 30,
+                "iron": 70,
+                "pop": 1,
+                "speed": 0.303030303,
+                "attack": 25,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 50,
+                "defense_cavalry": 25,
+                "defense_archer": 40,
+                "carry": 15,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 5,
+                "defpoints": 2,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "smith",
+                        "building_link": "\/game.php?village=617&amp;screen=smith",
+                        "name": "Kov\u00e1rna",
+                        "level": 1
+                    }
+                ],
+                "name": "\u0160erm\u00ed\u0159",
+                "shortname": "Me\u010d",
+                "desc": "\u0160erm\u00ed\u0159 je vhodn\u00fd na obranu proti p\u011bchot\u011b. Na druhou stranu je v\u0161ak relativn\u011b pomal\u00fd. ",
+                "desc_abilities": []
+            },
+            "axe": {
+                "id": "axe",
+                "image": "unit\/unit_axe.png",
+                "type": "infantry",
+                "prod_building": "barracks",
+                "build_time": 3.3,
+                "wood": 60,
+                "stone": 30,
+                "iron": 40,
+                "pop": 1,
+                "speed": 0.3703703704,
+                "attack": 40,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 10,
+                "defense_cavalry": 5,
+                "defense_archer": 10,
+                "carry": 10,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 1,
+                "defpoints": 4,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "smith",
+                        "building_link": "\/game.php?village=617&amp;screen=smith",
+                        "name": "Kov\u00e1rna",
+                        "level": 2
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 700,
+                    "stone": 840,
+                    "iron": 820
+                },
+                "name": "Sekern\u00edk",
+                "shortname": "Sekera",
+                "desc": "Sekern\u00edci jsou siln\u00e1, \u00fato\u010dn\u00e1 jednotka, av\u0161ak v obran\u011b jsou t\u00e9m\u011b\u0159 nepou\u017eiteln\u00ed. ",
+                "desc_abilities": []
+            },
+            "spy": {
+                "id": "spy",
+                "image": "unit\/unit_spy.png",
+                "type": "other",
+                "prod_building": "stable",
+                "build_time": 2.25,
+                "wood": 50,
+                "stone": 50,
+                "iron": 20,
+                "pop": 2,
+                "speed": 0.7407407407,
+                "attack": 0,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 2,
+                "defense_cavalry": 1,
+                "defense_archer": 2,
+                "carry": 0,
+                "stealth": 1,
+                "perception": 1,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 1,
+                "defpoints": 2,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "stable",
+                        "building_link": "\/game.php?village=617&amp;screen=stable",
+                        "name": "St\u00e1j",
+                        "level": 1
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 560,
+                    "stone": 480,
+                    "iron": 480
+                },
+                "name": "\u0160peh",
+                "shortname": "\u0160peh",
+                "desc": "\u0160pehov\u00e9 se vkradou do znep\u0159\u00e1telen\u00fdch vesnic, k z\u00edsk\u00e1n\u00ed informac\u00ed o bohatstv\u00ed a vojensk\u00e9 s\u00edle.",
+                "desc_abilities": [
+                    "Kdy\u017e \u00fato\u010d\u00ed, m\u016f\u017ee b\u00fdt pora\u017een jen ciz\u00edmi \u0161pehy.",
+                    "Po \u00fatoku se vr\u00e1t\u00ed s dodate\u010dn\u00fdmi informacemi z boje."
+                ]
+            },
+            "light": {
+                "id": "light",
+                "image": "unit\/unit_light.png",
+                "type": "cavalry",
+                "prod_building": "stable",
+                "build_time": 4.5,
+                "wood": 125,
+                "stone": 100,
+                "iron": 250,
+                "pop": 4,
+                "speed": 0.6666666667,
+                "attack": 130,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 30,
+                "defense_cavalry": 40,
+                "defense_archer": 30,
+                "carry": 80,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 5,
+                "defpoints": 13,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "stable",
+                        "building_link": "\/game.php?village=617&amp;screen=stable",
+                        "name": "St\u00e1j",
+                        "level": 3
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 2200,
+                    "stone": 2400,
+                    "iron": 2000
+                },
+                "name": "Lehk\u00e1 kaval\u00e9rie",
+                "shortname": "LK",
+                "desc": "Lehk\u00e1 kaval\u00e9rie je v\u00fdborn\u00e1 \u00fato\u010dn\u00e1 jednotka. Hod\u00ed se na vykon\u00e1v\u00e1n\u00ed neo\u010dek\u00e1van\u00e9ho \u00fatoku na vesnice protivn\u00edka, jeliko\u017e jej\u00ed p\u0159ednost\u00ed je rychlost a nosnost surovin.",
+                "desc_abilities": []
+            },
+            "heavy": {
+                "id": "heavy",
+                "image": "unit\/unit_heavy.png",
+                "type": "cavalry",
+                "prod_building": "stable",
+                "build_time": 9,
+                "wood": 200,
+                "stone": 150,
+                "iron": 600,
+                "pop": 6,
+                "speed": 0.6060606061,
+                "attack": 150,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 200,
+                "defense_cavalry": 80,
+                "defense_archer": 180,
+                "carry": 50,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 23,
+                "defpoints": 15,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "stable",
+                        "building_link": "\/game.php?village=617&amp;screen=stable",
+                        "name": "St\u00e1j",
+                        "level": 10
+                    },
+                    {
+                        "building_id": "smith",
+                        "building_link": "\/game.php?village=617&amp;screen=smith",
+                        "name": "Kov\u00e1rna",
+                        "level": 15
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 3000,
+                    "stone": 2400,
+                    "iron": 2000
+                },
+                "name": "T\u011b\u017ek\u00e1 kaval\u00e9rie",
+                "shortname": "TK",
+                "desc": "T\u011b\u017ek\u00e1 kaval\u00e9rie je elita tv\u00fdch jednotek. Jejich rychlost ti umo\u017en\u00ed soust\u0159edit svoji obranu rychle i do jin\u00fdch vesnic.",
+                "desc_abilities": []
+            },
+            "ram": {
+                "id": "ram",
+                "image": "unit\/unit_ram.png",
+                "type": "infantry",
+                "prod_building": "garage",
+                "build_time": 12,
+                "wood": 300,
+                "stone": 200,
+                "iron": 200,
+                "pop": 5,
+                "speed": 0.2222222222,
+                "attack": 2,
+                "building_attack_multiplier": 1,
+                "additional_max_wall_negation": 0,
+                "defense": 20,
+                "defense_cavalry": 50,
+                "defense_archer": 20,
+                "carry": 0,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 4,
+                "defpoints": 8,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "garage",
+                        "building_link": "\/game.php?village=617&amp;screen=garage",
+                        "name": "D\u00edlna",
+                        "level": 1
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 1200,
+                    "stone": 1600,
+                    "iron": 800
+                },
+                "name": "Beranidlo",
+                "shortname": "Beranidlo",
+                "desc": "Beranidla pom\u00e1haj\u00ed tv\u00fdm jednotk\u00e1m v \u00fatoku tak, \u017ee ni\u010d\u00ed opevn\u011bn\u00ed a sni\u017euj\u00ed jeho efektivitu.",
+                "desc_abilities": [
+                    "Po\u0161kozuje hradby a sni\u017euje jeho efektivitu v boji."
+                ]
+            },
+            "catapult": {
+                "id": "catapult",
+                "image": "unit\/unit_catapult.png",
+                "type": "infantry",
+                "prod_building": "garage",
+                "build_time": 18,
+                "wood": 320,
+                "stone": 400,
+                "iron": 100,
+                "pop": 8,
+                "speed": 0.2222222222,
+                "attack": 100,
+                "building_attack_multiplier": 1,
+                "additional_max_wall_negation": null,
+                "defense": 100,
+                "defense_cavalry": 50,
+                "defense_archer": 100,
+                "carry": 0,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 12,
+                "defpoints": 10,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "garage",
+                        "building_link": "\/game.php?village=617&amp;screen=garage",
+                        "name": "D\u00edlna",
+                        "level": 2
+                    },
+                    {
+                        "building_id": "smith",
+                        "building_link": "\/game.php?village=617&amp;screen=smith",
+                        "name": "Kov\u00e1rna",
+                        "level": 12
+                    }
+                ],
+                "tech_costs": {
+                    "wood": 1600,
+                    "stone": 2000,
+                    "iron": 1200
+                },
+                "name": "Katapult",
+                "shortname": "Katapult",
+                "desc": "Katapulty jsou \u00fato\u010dn\u00e1 jednotka, kter\u00e1 po\u0161kozuje nep\u0159\u00e1telsk\u00e9 voj\u00e1ky a ni\u010d\u00ed budovy ve vesnici, na kterou \u00fato\u010d\u00ed\u0161.",
+                "desc_abilities": [
+                    "Po\u0161kozuje vybranou nep\u0159\u00e1telskou budovu."
+                ]
+            },
+            "knight": {
+                "id": "knight",
+                "image": "unit\/unit_knight.png",
+                "type": "cavalry",
+                "prod_building": "statue",
+                "build_time": 54,
+                "wood": 20,
+                "stone": 20,
+                "iron": 40,
+                "pop": 10,
+                "speed": 0.6666666667,
+                "attack": 150,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 250,
+                "defense_cavalry": 400,
+                "defense_archer": 150,
+                "carry": 100,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 40,
+                "defpoints": 20,
+                "cost_modifier": 1,
+                "name": "Paladin",
+                "shortname": "Pala",
+                "desc": "Paladin je siln\u00e1 a jedine\u010dn\u00e1 jednotka, kter\u00e1 zv\u00fd\u0161\u00ed rychlost pohybu tv\u00fdch jednotek p\u0159i podpo\u0159e.",
+                "desc_abilities": [
+                    "Jednotky, kter\u00e9 cestuj\u00ed s paladinem jako podpora, se pohybuj\u00ed rychlost\u00ed paladina."
+                ]
+            },
+            "snob": {
+                "id": "snob",
+                "image": "unit\/unit_snob.png",
+                "type": "infantry",
+                "prod_building": "snob",
+                "build_time": 45,
+                "wood": 28000,
+                "stone": 30000,
+                "iron": 25000,
+                "pop": 100,
+                "speed": 0.1904761905,
+                "attack": 30,
+                "building_attack_multiplier": null,
+                "additional_max_wall_negation": null,
+                "defense": 100,
+                "defense_cavalry": 50,
+                "defense_archer": 100,
+                "carry": 0,
+                "stealth": 0,
+                "perception": 0,
+                "can_attack": true,
+                "can_support": true,
+                "attackpoints": 200,
+                "defpoints": 200,
+                "cost_modifier": 1,
+                "reqs": [
+                    {
+                        "building_id": "snob",
+                        "building_link": "\/game.php?village=617&amp;screen=snob",
+                        "name": "Pansk\u00fd dv\u016fr",
+                        "level": 1
+                    },
+                    {
+                        "building_id": "main",
+                        "building_link": "\/game.php?village=617&amp;screen=main",
+                        "name": "Hlavn\u00ed budova",
+                        "level": 20
+                    },
+                    {
+                        "building_id": "smith",
+                        "building_link": "\/game.php?village=617&amp;screen=smith",
+                        "name": "Kov\u00e1rna",
+                        "level": 20
+                    },
+                    {
+                        "building_id": "market",
+                        "building_link": "\/game.php?village=617&amp;screen=market",
+                        "name": "Tr\u017ei\u0161t\u011b",
+                        "level": 10
+                    }
+                ],
+                "name": "\u0160lechtic",
+                "shortname": "\u0160lechta",
+                "desc": "\u00datok, ve kter\u00e9m p\u0159e\u017eije alespo\u0148 jeden \u0161lechtic, sni\u017euje oddanost vesnice. Jakmile bude oddanost vesnice sn\u00ed\u017eena na 0 nebo ni\u017e\u0161\u00ed, zmocn\u00ed\u0161 se j\u00ed. \u0160lechtic, kter\u00fd vesnici p\u0159ebral, v\u0161ak zmiz\u00ed.",
+                "desc_abilities": [
+                    "Sni\u017euje oddanost vesnice o 100 a\u017e 100 bod\u016f."
+                ]
+            }
+        },
+        "template": "<div id=\"unit_popup_template\" style=\"display: none\">\n        <div class=\"inner-border main content-border\" style=\"border: none; font-weight: normal\">\n                <table style=\"float: left;width:450px\">\n            <tr>\n                <td>\n                    <p class=\"unit_desc\"><\/p>\n                <\/td>\n            <\/tr>\n            <tr>\n                <td>\n                    <table style=\"border: 1px solid #DED3B9;\" class=\"vis\" width=\"100%\">\n                        <tr>\n                            <th width=\"180\">N\u00e1klady<\/th>\n                            <th>Obyvatelstvo<\/th>\n                            <th>Rychlost <\/th>\n                            <th>Unese<\/th>\n                        <\/tr>\n                        <tr class=\"center\">\n                            <td><nobr><span class=\"icon header wood\"> <\/span><span class=\"unit_wood\"><\/span><\/nobr> <nobr><span class=\"icon header stone\"> <\/span><span class=\"unit_stone\"><\/span><\/nobr> <nobr><span class=\"icon header iron\" > <\/span><span class=\"unit_iron\"><\/span><\/nobr><\/td>\n                            <td><span class=\"icon header population\"> <\/span><span class=\"unit_pop\"><\/span><\/td>\n                            <td id=\"unit_speed\"><\/td>\n                            <td class=\"unit_carry\"><\/td>\n                        <\/tr>\n                    <\/table>\n                    <br \/>\n\n                    <table class=\"vis has_levels_only\" style=\"border: 1px solid #DED3B9;text-align:center\" class=\"vis\"  width=\"100%\">\n                        <tr><th colspan=\"3\">Bojov\u00e9 hodnoty<\/th><\/tr>\n                        <tr><td align=\"left\">S\u00edla \u00fatoku<\/td><td width=\"20px\"><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/att.png\" alt=\"S\u00edla \u00fatoku\" class=\"\" \/><\/td><td><span class=\"unit_attack\"><\/span><\/td><\/tr>\n                        <tr><td align=\"left\">V\u0161eobecn\u00e1 obrana <\/td><td><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/def.png\" alt=\"V\u0161eobecn\u00e1 obrana \" class=\"\" \/><\/td><td><span class=\"unit_defense\"><\/span><\/td><\/tr>\n                        <tr><td align=\"left\">Obrana proti kaval\u00e9rii <\/td><td><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/def_cav.png\" alt=\"Obrana proti kaval\u00e9rii \" class=\"\" \/><\/td><td><span class=\"unit_defense_cavalry\"><\/span><\/td><\/tr>\n                                            <\/table>\n                    <br \/>\n\n                    <div class=\"show_if_has_abilities\">\n                        <table class=\"vis\" style=\"width:100%;\">\n                            <tr><th>Speci\u00e1ln\u00ed schopnosti<\/th><\/tr>\n                            <tr><td><ul class=\"unit_info_abilities\" style=\"margin:5px;padding-left:20px;\"><\/ul><\/td><\/tr>\n                        <\/table>\n                        <br\/>\n                    <\/div>\n\n                    <div class=\"show_if_has_reqs\">\n                        <table class=\"vis\" width=\"100%\">\n                            <tr><th id=\"reqs_count\" colspan=\"1\">P\u0159edpoklady ke zkoum\u00e1n\u00ed jednotky<\/th><\/tr>\n                            <tr id=\"reqs\"><\/tr>\n                        <\/table>\n                        <br \/>\n                    <\/div>\n\n                    <table class=\"unit_tech vis unit_tech_levels\"  width=\"100%\">\n                        <tr style=\"text-align:center\">\n                            <th>Tech-Level<\/th>\n                            <th width=\"350\">N\u00e1klady za zkoum\u00e1n\u00ed<\/th>\n                            <th width=\"30\" style=\"text-align:center\"><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/att.png\" alt=\"S\u00edla \u00fatoku\" class=\"\" \/><\/th>\n                            <th width=\"30\" style=\"text-align:center\"><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/def.png\" alt=\"V\u0161eobecn\u00e1 obrana \" class=\"\" \/><\/th>\n                            <th width=\"30\" style=\"text-align:center\"><img src=\"https:\/\/dscs.innogamescdn.com\/asset\/e9e1997c\/graphic\/unit\/def_cav.png\" alt=\"Obrana proti kaval\u00e9rii \" class=\"\" \/><\/th>\n                                                    <\/tr>\n                        <tr id=\"unit_tech_prototype\" style=\"display: none;text-align:center\">\n                            <td class=\"tech_level\"><\/td>\n                            <td>\n                                <span class=\"grey tech_researched\">ji\u017e prozkoum\u00e1no<\/span>\n                                <span class=\"tech_res_list\">\n\t\t\t\t\t\t\t\t\t<span class=\"icon header wood\"> <\/span><span class=\"tech_wood\"><\/span> <span class=\"icon header stone\"> <\/span><span class=\"tech_stone\"><\/span> <span class=\"icon header iron\" > <\/span><span class=\"tech_iron\"><\/span>\n\t\t\t\t\t\t\t\t<\/span>\n                            <\/td>\n                            <td class=\"tech_att\"><\/td>\n                            <td class=\"tech_def\"><\/td>\n                            <td class=\"tech_def_cav\"><\/td>\n                                                    <\/tr>\n                    <\/table>\n                    <table class=\"vis unit_tech unit_tech_cost\"  width=\"100%\">\n                        <tr><th>N\u00e1klady za zkoum\u00e1n\u00ed<\/th><\/tr>\n                        <tr><td><span class=\"icon header wood\"> <\/span><span class=\"tech_cost_wood\"><\/span> <span class=\"icon header stone\"> <\/span><span class=\"tech_cost_stone\"><\/span> <span class=\"icon header iron\" > <\/span><span class=\"tech_cost_iron\"><\/span><\/td><\/tr>\n                    <\/table>\n                <\/td>\n            <\/tr>\n        <\/table>\n        <img style=\"margin-top: 60px; max-width: 200px; display: none\" id=\"unit_image\" src=\"graphic\/map\/empty.png\" alt=\"\" \/>\n            <\/div>\n    <\/div>"
+    },
+    "game_data": {
+        "player": {
+            "id": "3048827",
+            "name": "-2142-",
+            "ally": "0",
+            "ally_level": null,
+            "ally_member_count": null,
+            "sitter": "0",
+            "sleep_start": "0",
+            "sitter_type": "normal",
+            "sleep_end": "0",
+            "sleep_last": "0",
+            "email_valid": "1",
+            "villages": "1",
+            "incomings": "0",
+            "supports": 0,
+            "knight_location": null,
+            "knight_unit": null,
+            "rank": 41,
+            "points": "12130",
+            "date_started": "1561567257",
+            "is_guest": "0",
+            "birthdate": "0000-00-00",
+            "confirmation_skipping_hash": "",
+            "quest_progress": "0",
+            "points_formatted": "12<span class=\"grey\">.<\/span>130",
+            "rank_formatted": "41",
+            "pp": "297",
+            "new_ally_application": 0,
+            "new_ally_invite": "0",
+            "new_buddy_request": "0",
+            "new_daily_bonus": "0",
+            "new_forum_post": 0,
+            "new_igm": "0",
+            "new_items": "0",
+            "new_report": "0",
+            "new_quest": "0"
+        },
+        "features": {
+            "Premium": {
+                "possible": true,
+                "active": false
+            },
+            "AccountManager": {
+                "possible": false,
+                "active": false
+            },
+            "FarmAssistent": {
+                "possible": true,
+                "active": false
+            }
+        },
+        "village": {
+            "id": 617,
+            "name": "-2142- vesnice",
+            "display_name": "-2142- vesnice (512|485) K45",
+            "wood": 400000,
+            "wood_prod": 266.6666696,
+            "wood_float": 400000,
+            "stone": 400000,
+            "stone_prod": 266.6666696,
+            "stone_float": 400000,
+            "iron": 400000,
+            "iron_prod": 266.6666696,
+            "iron_float": 400000,
+            "pop": 15602,
+            "pop_max": 24000,
+            "x": 512,
+            "y": 485,
+            "trader_away": 0,
+            "storage_max": 400000,
+            "bonus_id": null,
+            "bonus": null,
+            "buildings": {
+                "main": "30",
+                "barracks": "25",
+                "stable": "20",
+                "garage": "15",
+                "snob": "1",
+                "smith": "20",
+                "place": "1",
+                "statue": "0",
+                "market": "25",
+                "wood": "30",
+                "stone": "30",
+                "iron": "30",
+                "farm": "30",
+                "storage": "30",
+                "hide": "10",
+                "wall": "20"
+            },
+            "player_id": 3048827,
+            "modifications": 0,
+            "points": 12130,
+            "last_res_tick": 1561575745000,
+            "coord": "512|485",
+            "is_farm_upgradable": false
+        },
+        "nav": {
+            "parent": 2
+        },
+        "link_base": "\/game.php?village=617&amp;screen=",
+        "link_base_pure": "\/game.php?village=617&screen=",
+        "csrf": "2634e443",
+        "world": "css1",
+        "market": "cz",
+        "RTL": false,
+        "version": "e9e1997c release_8.173",
+        "majorVersion": "8.173",
+        "screen": "unit_info",
+        "mode": null,
+        "device": "desktop",
+        "pregame": false,
+        "units": [
+            "spear",
+            "sword",
+            "axe",
+            "spy",
+            "light",
+            "heavy",
+            "ram",
+            "catapult",
+            "knight",
+            "snob"
+        ],
+        "locale": "cs_CZ",
+        "time_generated": 1.561575746e+12
+    }
+}

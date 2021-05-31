@@ -1,0 +1,223 @@
+<div id="vueapp" style="width: max-content;">
+    <div class="vis" style="margin: 15px; width: fit-content;">
+        <h4>MapCommander by Darxeal</h4>
+        <table class='vis' style="padding: 5px;">
+            <tr>
+                <td>
+                    <table style="border-collapse: separate; border-spacing: 3px;">
+                        <tr>
+                            <th>Původ</th>
+                            <td>
+                                <span v-if="source">
+                                    <a @click="centerMap(source.x, source.y)" style="cursor: pointer;">{{ source.name }}</a>
+                                    ({{ source.ownerName }})
+                                </span>
+                                <span v-else>(Klikni na vesnici na mapě)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Cíl</th>
+                            <td>
+                                <span v-if="target">
+                                    <a @click="centerMap(target.x, target.y)" style="cursor: pointer;">{{ target.name }}</a>
+                                    ({{ target.ownerName }})
+                                </span>
+                                <span v-else>(Klikni na vesnici na mapě)</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <select size="1" style='width: 60px' v-model="commandTimingType">
+                                    <option value="arrival">Dopad</option>
+                                    <option value="departure">Odchod</option>
+                                </select>
+                            </th>
+                            <td>
+                                <input type='datetime-local' id='timepicker' style="width:190px;" @input="desiredTime = $event.target.valueAsNumber">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Cíl <img :src="unitImage('catapult')" style="width: 13px;"></th>
+                            <td>
+                                <select size="1" v-model="catapultTarget">
+                                    <option :value="building" v-for="building in buildings">
+                                        {{ Darxeal.buildingNames[building] }}
+                                    </option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">
+                                <input type="radio" value="attack" v-model="commandType">
+                                <img :src="imageBase + 'command/attack.png'"> Útok
+                                <input type="radio" value="support" v-model="commandType">
+                                <img :src="imageBase + 'command/support.png'"> Podpora
+                            </th>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <div style="margin-bottom: 10px;">
+                        Šablony: 
+                        <a v-for="template in templates" @click="setTemplate(template)" style="cursor: pointer;">
+                            <img :src="imageBase + template.icon">
+                            {{ template.name }}
+                        </a>
+                    </div>
+                    <table>
+                        <tr>
+                            <th v-for="unit in units">
+                                <img :src='unitImage(unit)'>
+                            </th>
+                        </tr>
+                        <tr>
+                            <td v-for="unit in units">
+                                <input type='number' style='width:40px' v-model.number="unitCounts[unit]" :disabled="unitSendAlls[unit]">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td v-for="unit in units">
+                                <input v-if="unit != 'snob'" type='checkbox' v-model="unitSendAlls[unit]">
+                            </td>
+                        </tr>
+                        <tr v-for="(row, i) in train" v-if="ableToSendTrain">
+                            <td v-for="unit in units">
+                                <span v-if="unit == 'snob'">
+                                    1 <img :src="imageBase + 'delete.png'" @click="train.splice(i, 1)" style="float: right; cursor: pointer;">
+                                </span>
+                                <input v-else type='number' style='width:40px' v-model.number="row[unit]">
+                            </td>
+                        </tr>
+                    </table>
+                    <div v-if="ableToSendTrain">
+                        <button class="btn btn-img" @click="addTrainRow">
+                            <img :src="unitImage('snob')">
+                            Přidat útok se šlechticem
+                        </button>
+                    </div>
+                    <div v-if="supportAndPaladin" style="color: rgb(255, 102, 0);">
+                        Varování: Ujisti se, že paladin opravdu ve vesnici bude. Jinak se podpora pošle pozdě.
+                    </div>
+                </td>
+                <td>
+                    <table v-if="isCommandSendable">
+                        <tr>
+                            <th colspan="2">Očekávané časy</th>
+                        </tr>
+                        <tr>
+                            <th>Rychlost</th>
+                            <td>
+                                <img :src="unitImage(command.slowestUnit)">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Trvání</th>
+                            <td>
+                                <span class="icon header time"></span>
+                                <span v-html="Darxeal.timeString(command.durationSeconds)"></span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Odchod</th>
+                            <td v-html="Darxeal.dateTimeString(command.departureDate)"></td>
+                        </tr>
+                        <tr>
+                            <th>Dopad</th>
+                            <td v-html="Darxeal.dateTimeString(command.arrivalDate)"></td>
+                        </tr>
+                        <tr>
+                            <th>Odejde za</th>
+                            <td v-if="command.countdownSeconds == 0">
+                                <b style="color: red;" v-html="Darxeal.timeString(command.countdownSeconds)"></b>
+                            </td>
+                            <td v-else v-html="Darxeal.timeString(command.countdownSeconds)"></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <button class="btn btn-img" @click="addCommand">
+                                    <img :src="imageBase + 'command/' + commandType + '.png'">
+                                    Potvrdit
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div class="vis" style="margin: 15px; width: fit-content;">
+        <h4>Seznam příkazů</h4>
+        <table>
+            <tr>
+                <th colspan="2"></th>
+                <th>Původ</th>
+                <th>Cíl</th>
+                <th v-for="unit in units">
+                    <img :src="unitImage(unit)">
+                </th>
+                <th><img :src="unitImage('catapult')"></th>
+                <th>Trvání</th>
+                <th>Odchod</th>
+                <th>Dopad</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+            <tr v-for="command in commandList">
+                <td>
+                    <img :src="imageBase + 'command/' + command.commandType + '.png'">
+                </td>
+                <td>
+                    <img :src="unitImage(command.slowestUnit)">
+                </td>
+                <td>
+                    <a @click="centerMap(command.source.x, command.source.y)" style="cursor: pointer;">{{ command.source.name }}</a>
+                </td>
+                <td>
+                    <a @click="centerMap(command.target.x, command.target.y)" style="cursor: pointer;">{{ command.target.name }}</a>
+                    ({{ command.target.ownerName }})
+                </td>
+                <td v-for="unit in units">
+                    <div style="text-align: center;">
+                        <input type="checkbox" checked disabled v-if="command.unitSendAlls[unit]">
+                        <span v-else-if="command.unitCounts[unit] > 0">{{ command.unitCounts[unit] }}</span>
+                        <span v-else class="hidden">0</span>
+                    </div>
+                    <div v-for="row in command.train" style="text-align: center;">
+                        <span v-if="row[unit] > 0">{{ row[unit] }}</span>
+                        <span v-else class="hidden">0</span>
+                    </div>
+                </td>
+                <td>
+                    <img :src="imageBase + 'buildings/' + command.catapultTarget + '.png'"
+                        v-if="command.unitCounts['catapult'] > 0 || command.unitSendAlls['catapult']">
+                </td>
+                <td>
+                    <span class="icon header time"></span>
+                    <span v-html="Darxeal.timeString(command.durationSeconds)"></span>
+                </td>
+                <td v-html="Darxeal.dateTimeString(command.departureDate)"></td>
+                <td>
+                    <div v-html="Darxeal.dateTimeString(command.arrivalDate)"></div>
+                    <div v-for="date in command.trainArrivalDates" v-html="Darxeal.dateTimeString(date)"></div>
+                </td>
+                <td v-if="command.status">
+                    <span v-if="command.success" style="color: green;">{{ command.status }}</span>
+                    <span v-else style="color: red;">{{ command.status }}</span>
+                </td>
+                <td v-else>
+                    <span v-html="Darxeal.timeString(command.countdownSeconds)"></span>
+                    <img :src="imageBase + 'delete.png'" @click="removeCommand(command)" style="cursor: pointer;">
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+
+<style>
+#vueapp td, th {
+    padding: 2px 3px;
+}
+</style>

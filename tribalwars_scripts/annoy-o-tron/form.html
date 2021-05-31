@@ -1,0 +1,63 @@
+<div id="vueapp">
+    <table>
+        <tr>
+            <td>
+                <img src="https://gamepedia.cursecdn.com/hearthstone_gamepedia/thumb/b/b2/Annoyotron_full.jpg/400px-Annoyotron_full.jpg?version=7724bf667f441932bc609f49473f0377"
+                    style="width: 150px;">
+            </td>
+            <td>
+                <h2>Annoy-o-Tron</h2>
+                Skript pošle několik špehů z vesnice kterou máš teď aktivní, a po chvilce útok zruší.
+                Takto pokračuje v náhodných intervalech dokud nezavřeš tuhle kartu.
+                <b>Z této vesnice nesmí jít žádný jiný příkaz!</b>
+            </td>
+        </tr>
+    </table>
+
+    <div class="vis" style="width: fit-content;">
+        <h4>Nastavení</h4>
+        <table>
+            <tr>
+                <td>Cílová vesnice</td>
+                <td><input type="text" :disabled="active" v-model.trim="target"></td>
+            </tr>
+            <tr>
+                <td>První útok se odešle za</td>
+                <td><input type="number" :disabled="active" v-model.number="delay"> minut</td>
+            </tr>
+            <tr>
+                <td>Minimální interval</td>
+                <td><input type="number" :disabled="active" v-model.number="intervalMin"> minut</td>
+            </tr>
+            <tr>
+                <td>Maximální interval</td>
+                <td><input type="number" :disabled="active" v-model.number="intervalMax"> minut</td>
+            </tr>
+            <tr>
+                <td>Útok zrušit po</td>
+                <td><input type="number" :disabled="active" v-model.number="cancelTimeout"> sekundách</td>
+            </tr>
+            <tr>
+                <td>Počet špehů</td>
+                <td><input type="number" :disabled="active" v-model.number="spies"></td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <button @click="start" class="btn" :disabled="active">Spustit</button>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="vis" style="width: fit-content;">
+        <h4>Provedené akce</h4>
+        <table class="vis">
+            <tr v-for="log in logs">
+                <td>{{ log.time }}</td>
+                <td :style="{ color : log.color }">
+                    {{ log.message }}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

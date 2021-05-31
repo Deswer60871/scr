@@ -1,0 +1,50 @@
+<div id="vueapp" class="vis" style="width: fit-content; margin: auto;">
+    <h4>CoinMinter by Darxeal</h4>
+    <table class="vis">
+        <tr>
+            <td>
+                <input type="radio" v-model="resourceBalanceMethod" value="all" id="method_all">
+                <label for="method_all">Poslat úplně všechny suroviny</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="radio" v-model="resourceBalanceMethod" value="ratio" id="method_ratio">
+                <label for="method_ratio">Poslat suroviny v poměru ceny mince</label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Posílat v intervalu
+                <input type="number" v-model:number="minCallInterval" style="width: 30px;">
+                 - 
+                <input type="number" v-model:number="maxCallInterval" style="width: 30px;">
+                minut
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Razit mince v intervalu
+                <input type="number" v-model:number="minMintInterval" style="width: 30px;">
+                 - 
+                <input type="number" v-model:number="maxMintInterval" style="width: 30px;">
+                sekund
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align: center;">
+                <button class="btn" @click="start" :disabled="active">Spustit</button>
+                <span v-if="active">
+                    Vyraženo mincí:
+                    <img :src="coinImg" style="position: relative; top: 3px;"> 
+                    <b>{{ coinsMinted }}</b>
+                </span>
+            </td>
+        </tr>
+    </table>
+</div>
+<style>
+    #vueapp td, th {
+        padding: 2px 3px;
+    }
+</style>
