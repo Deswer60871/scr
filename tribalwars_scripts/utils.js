@@ -8,7 +8,7 @@ var Darxeal = {
     
             $.getScript("https://darxeal.github.io/tribalwars_scripts/vue.js");
             options.el.load(host + options.template);
-            if (!options.dev) $.get(host + "tracking/update.js", (r) => {eval(r); addlog(options.name);});
+            
             options.vue.data.Darxeal = Darxeal;
     
             function waitForVueToStart() {
