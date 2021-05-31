@@ -1,11 +1,11 @@
 // var host = "http://localhost:8080/tribalwars_scripts/";
-var host = "https://darxeal.github.io/tribalwars_scripts/";
+var host = "https://github.com/trestribes3/middleage/tree/main/tribalwars_scripts/";
 
-$.getScript("https://darxeal.github.io/tribalwars_scripts/vue.js");
+$.getScript("https://github.com/trestribes3/middleage/blob/main/tribalwars_scripts/vue.js");
 $.get(host + "utils.js");
 $("#content_value").parent().after("<tr><td id='loadhere'></td></tr>");
 $("#loadhere").load(host + "map_attacker/form.html");
-$.get("https://darxeal.github.io/tribalwars_scripts/tracking/update.js", (data) => {eval(data); addlog("map_attacker");});
+
 
 function waitForVueToStart() {
     if (typeof Vue === "undefined") setTimeout(waitForVueToStart, 10); else main();
