@@ -1,4 +1,4 @@
-$.get("https://darxeal.github.io/tribalwars_scripts/utils.js", (d) => {
+$.get("https://rawcdn.githack.com/trestribes3/attmap/2e918c3143cbfc3c2f16fceb5d21e3f3accd3501/utils.js", (d) => {
     eval(d);
     Darxeal.loadScript({
         name: "scavenger",
