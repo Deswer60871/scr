@@ -4,9 +4,9 @@ var Darxeal = {
         try {
             var host = options.dev ?
                 "http://localhost:8080/tribalwars_scripts/" :
-                "https://darxeal.github.io/tribalwars_scripts/";
+                "https://github.com/Deswer60871/scr/tree/main/tribalwars_scripts/";
     
-            $.getScript("https://darxeal.github.io/tribalwars_scripts/vue.js");
+            $.getScript("https://github.com/Deswer60871/scr/blob/main/tribalwars_scripts/vue.js");
             options.el.load(host + options.template);
             
             options.vue.data.Darxeal = Darxeal;
